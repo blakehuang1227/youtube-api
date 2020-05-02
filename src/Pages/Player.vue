@@ -26,11 +26,13 @@
 
 <script>
 import videojs from "video.js";
-import video from "videojs-contrib-hls";
+import "videojs-contrib-hls";
 import "video.js/dist/video-js.css";
 export default {
   data() {
-    return {};
+    return {
+      player: null
+    };
   },
   props: ["data"],
   methods: {},
@@ -39,6 +41,24 @@ export default {
     // if (this.data === undefined) {
     //   this.$router.push("/Home");
     // }
+  },
+  mounted() {
+    this.player = videojs(
+      "my-video",
+      {
+        bigPlayButton: false,
+        textTrackDisplay: false,
+        posterImage: true,
+        errorDisplay: false,
+        controlBar: true
+      },
+      function() {
+        this.play();
+      }
+    );
+  },
+  beforeDestroy() {
+    if (this.player) this.player.dispose();
   }
 };
 </script>
