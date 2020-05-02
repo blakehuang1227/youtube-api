@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Noto Sans TC";
+  src: url("../font/NotoSansCJKtc-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../font/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
