@@ -94,7 +94,8 @@ export default {
           video.favor = false;
         }
       } else {
-        favor = [id];
+        this.$set(video, "favor", true);
+        favor = [video.id];
       }
 
       localStorage.setItem("favor", JSON.stringify(favor));

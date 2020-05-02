@@ -34,14 +34,11 @@ export default {
   },
   props: ["data"],
   methods: {},
-  beforeMount() {
-    if (this.data === undefined) {
-      this.$router.push("/Home");
-    }
-  },
   created() {
-    // videojs("my-video", {}, function() {
-    // });
+    console.log(this.data);
+    // if (this.data === undefined) {
+    //   this.$router.push("/Home");
+    // }
   }
 };
 </script>
