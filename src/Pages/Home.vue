@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <div class="video-wrap" v-loading.fullscreen.lock="fullscreenLoading">
-      <div class="flex-row">
+      <div class="flex-row" ref="item">
         <div
           class="item"
           v-for="video in videos"
@@ -104,6 +104,11 @@ export default {
         (this.currentPage - 1) * this.pageSize,
         this.currentPage * this.pageSize
       );
+
+      this.$nextTick(() => {
+        console.log(this.$refs.item);
+        this.$refs.item.scrollTop = 0;
+      });
     },
     getData() {
       return this.$axios({

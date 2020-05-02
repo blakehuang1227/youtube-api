@@ -43,6 +43,9 @@ export default new VueRouter({
         //     component: () => import('../Pages/Player'),
         //     meta: { title: "", requireLogin: false }
         // },
-    ]
+    ],
+    scrollBehavior(to, from, savedPosition) {
+        return { x: 0, y: 0 }
+    }
 
 })
